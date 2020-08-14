@@ -41,11 +41,13 @@
     <div class="row pt-4">
         @foreach($user->posts as $post)
         <div class="col-4 pb-5">
-            <img src="/storage/{{ $post->image }}" class="w-100">
+            <a href="/p/{{ $post->id }}">
+                <img src="/storage/{{ $post->image }}" class="w-100">
+            </a>
         </div>
         @endforeach
-        
-        
+
+
     </div>
 </div>
 @endsection
