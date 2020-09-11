@@ -30,7 +30,7 @@ class StoryController extends Controller
 
         $image->save();
 
-        auth()->user()->story()->create([
+        auth()->user()->stories()->create([
             'caption' => $data['caption'],
             'image' => $imagePath,
         ]);
