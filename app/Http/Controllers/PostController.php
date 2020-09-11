@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
-class PostsController extends Controller
+class PostController extends Controller
 {
     public function __construct()
     {
@@ -14,7 +14,7 @@ class PostsController extends Controller
 
     public function create()
     {
-        return view('posts.create');
+        return view('post.create');
     }
 
     public function store()
@@ -39,6 +39,6 @@ class PostsController extends Controller
 
     public function show(\App\Post $post)
     {
-        return view('posts.show', compact('post'));
+        return view('post.show', compact('post'));
     }
 }
