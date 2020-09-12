@@ -4,7 +4,7 @@
 <div class="container profile-container">
     <div class="row">
         <div class="col-3 profile-img-container">
-            <img class="img-fluid profile-img" src="/storage/{{ $user->profile->image }}" alt="">
+            <img class="img-fluid profile-img" src="{{ $user->profile->profileImage() }}" alt="">
         </div>
         <div class="col-9 pt-5">
             <div class="d-flex justify-content-between align-items-baseline">
