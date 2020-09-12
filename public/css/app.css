@@ -10915,3 +10915,7 @@ a.text-dark:focus {
   width: 100%;
 }
 
+.post-profile-img {
+  max-height: 40px;
+}
+
