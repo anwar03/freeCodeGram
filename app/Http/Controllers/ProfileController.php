@@ -28,7 +28,7 @@ class ProfileController extends Controller
             'image' => ''
         ]);
 
-        auth()->user()->profile->update($data);
+        auth()git a->user()->profile->update($data);
         return redirect('/profile/'. $user->id);
     }
 }
