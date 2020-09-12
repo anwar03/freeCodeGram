@@ -6,3 +6,21 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+
+.profile-container{
+    padding: 20px 100px !important;
+}
+
+.profile-img-container{
+    text-align: center !important;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.profile-img{
+    border-radius: 50%;
+    width: 100%;
+}
