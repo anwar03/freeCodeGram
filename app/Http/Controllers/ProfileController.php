@@ -11,9 +11,9 @@ class ProfileController extends Controller
 {
     public function index(User $user)
     {
-        return view('profile.index', [
-            "user" => $user,
-        ]);
+        $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
+//        dd($follows);
+        return view('profile.index', compact('user', 'follows'));
     }
 
     public function edit(User $user)
@@ -32,13 +32,11 @@ class ProfileController extends Controller
             'url' => 'url',
             'image' => ''
         ]);
-        
+
         $imageArr = [];
         if(request('image')){
             $imagePath = request('image')->store('profile', 'public');
-
             $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
-
             $image->save();
             $imageArr = ['image' => $imagePath];
         }
