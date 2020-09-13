@@ -1,5 +1,6 @@
 <?php
 
+use App\Mail\NewUserWelcomeMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,10 @@ Route::get('/story/create', 'StoryController@create')->name('story.create');
 Route::get('/story/{story}', 'StoryController@show')->name('story.show');
 Route::post('/story', 'StoryController@store')->name('story.store');
 
+
+Route::get('/email', function (){
+    return new NewUserWelcomeMail();
+});
 Auth::routes();
 
 

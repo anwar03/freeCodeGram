@@ -33,7 +33,7 @@ class ProfileController extends Controller
             function () use ($user) {
                 return $user->profile->followers->count();
             });
-        
+
 
         return view('profile.index', compact('user', 'follows', 'postsCount', 'followersCount', 'followingCount'));
     }
