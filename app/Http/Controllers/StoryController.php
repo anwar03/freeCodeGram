@@ -13,6 +13,13 @@ class StoryController extends Controller
         $this->middleware('auth');
     }
 
+    public function index(){
+        $users = auth()->user()->following()->pluck('profiles.user_id');
+
+        $posts = Story::whereIn('user_id', $users)->get();
+        return view('story.index', compact('posts'));
+    }
+
     public function create()
     {
         return view('story.create');
