@@ -16,7 +16,7 @@ class StoryController extends Controller
     public function index(){
         $users = auth()->user()->following()->pluck('profiles.user_id');
 
-        $posts = Story::whereIn('user_id', $users)->get();
+        $posts = Story::whereIn('user_id', $users)->latest()->paginate(5);
         return view('story.index', compact('posts'));
     }
 
